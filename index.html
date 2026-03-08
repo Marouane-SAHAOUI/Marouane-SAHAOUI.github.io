@@ -4,17 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marouane SAHAOUI · BUT GEII · Portfolio</title>
-  <meta
-    name="description"
-    content="Portfolio de Marouane SAHAOUI, étudiant en BUT GEII parcours ESE à l'IUT de Nantes. Recherche d'alternance à partir de septembre 2026 en systèmes embarqués, validation et moyens d'essais."
-  />
+  <meta name="description" content="Portfolio de Marouane SAHAOUI, étudiant en BUT GEII parcours ESE à l'IUT de Nantes. Recherche d'alternance à partir de septembre 2026 en systèmes embarqués, validation et moyens d'essais." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -284,7 +278,7 @@
       margin: 0 auto;
       padding: 7rem 2rem 4rem;
       display: grid;
-      grid-template-columns: 1fr 360px;
+      grid-template-columns: 1fr 340px;
       gap: 4rem;
       align-items: center;
     }
@@ -426,69 +420,44 @@
       color: #fff;
     }
 
-    .hero-aside {
+    .hero-photo-wrap {
       display: flex;
       justify-content: center;
     }
 
-    .hero-focus-card {
+    .hero-photo-frame {
+      width: 290px;
+      height: 290px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+
+    .hero-photo-frame img {
       width: 100%;
-      max-width: 310px;
-      padding: 1.8rem;
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.16);
-      color: rgba(255, 255, 255, 0.88);
+      height: 100%;
+      object-fit: cover;
     }
 
-    .hero-focus-label {
+    .hero-photo-frame.empty {
+      border: 2px dashed rgba(255, 255, 255, 0.22);
+      box-shadow: none;
+    }
+
+    .hero-photo-frame.empty::after {
+      content: "Photo";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-family: "DM Mono", monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #8dbaff;
-      margin-bottom: 0.9rem;
-    }
-
-    .hero-focus-title {
-      font-family: "Syne", sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      line-height: 1.2;
-      color: #fff;
-      margin-bottom: 1rem;
-    }
-
-    .hero-focus-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-focus-list li {
-      display: flex;
-      gap: 0.65rem;
-      align-items: flex-start;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 0.95rem;
-      line-height: 1.55;
-    }
-
-    .hero-focus-list li::before {
-      content: "•";
-      color: #6db0ff;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .hero-focus-foot {
-      padding-top: 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
       font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.72);
+      color: rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.04);
     }
 
     .hero-scroll-hint {
@@ -813,7 +782,7 @@
     }
 
     .project-desc li::before {
-      content: "→";
+      content: "•";
       color: var(--accent);
       flex-shrink: 0;
     }
@@ -1225,7 +1194,7 @@
         justify-content: center;
       }
 
-      .hero-aside {
+      .hero-photo-wrap {
         justify-content: center;
       }
 
@@ -1290,6 +1259,11 @@
 
       .hero-ctas .btn {
         width: 100%;
+      }
+
+      .hero-photo-frame {
+        width: 240px;
+        height: 240px;
       }
     }
   </style>
@@ -1360,19 +1334,9 @@
         </div>
       </div>
 
-      <div class="hero-aside reveal-right" style="transition-delay: 0.15s;">
-        <div class="hero-focus-card">
-          <div class="hero-focus-label">Positionnement</div>
-          <div class="hero-focus-title">Validation & systèmes réels</div>
-          <ul class="hero-focus-list">
-            <li>Tests fonctionnels et relevés sur oscilloscope</li>
-            <li>FSM en C, microcontrôleurs et logique séquentielle</li>
-            <li>Documentation technique et rigueur de vérification</li>
-          </ul>
-          <div class="hero-focus-foot">
-            Mobilité : Loire-Atlantique · Maine-et-Loire<br>
-            Objectif : alternance puis école d’ingénieurs
-          </div>
+      <div class="hero-photo-wrap reveal-right" style="transition-delay: 0.15s;">
+        <div class="hero-photo-frame" id="hero-photo-frame">
+          <img src="assets/photo_marouane.jpg" alt="Photo de Marouane SAHAOUI" onerror="this.style.display='none';document.getElementById('hero-photo-frame').classList.add('empty')" />
         </div>
       </div>
     </div>
@@ -1386,15 +1350,15 @@
     <section id="about" class="about-inner">
       <div class="about-text reveal-left">
         <p class="section-label">À propos</p>
-        <h2 class="section-title">Échec,<br>persévérance,<br>ambition.</h2>
+        <h2 class="section-title">Persévérance,<br>Ambition,<br>Progression.</h2>
         <div class="divider"></div>
 
         <p>
-          Refusé en BUT Informatique à cause de mes spécialités au lycée, j’ai d’abord mal vécu une décision que je ne maîtrisais pas. Mais plutôt que de la subir, j’ai choisi d’en faire un point de départ : en intégrant le BUT GEII, j’ai découvert que l’informatique appliquée au réel correspondait exactement à ce que je cherchais, tout en continuant à apprendre en autonomie à côté. L’échec du départ est devenu une trajectoire cohérente.
+          Mon parcours ne s’est pas construit exactement comme je l’imaginais au départ. En intégrant le BUT GEII, j’ai découvert que l’informatique appliquée au réel correspondait pleinement à ce que je cherchais. Cette réorientation m’a appris à avancer avec constance, à apprendre en autonomie et à construire un projet cohérent.
         </p>
 
         <p>
-          Ma formation couvre <span class="highlight">la conception, la vérification et l’intégration de systèmes embarqués</span>. À travers mes projets — conception de PCB sous KiCad, implémentation de machines à états finis en C, réalisation de fiches de tests à l’oscilloscope — j’ai appris à documenter rigoureusement, à valider méthodiquement et à ne pas me satisfaire d’un résultat qui « semble correct ».
+          Ma formation couvre <span class="highlight">la conception, la vérification et l’intégration de systèmes embarqués</span>. À travers mes projets, conception de PCB sous KiCad, implémentation de machines à états finis en C, réalisation de fiches de tests à l’oscilloscope, j’ai appris à documenter rigoureusement, à valider méthodiquement et à aller au-delà d’un résultat qui semble correct.
         </p>
 
         <p>
@@ -1410,7 +1374,6 @@
           <span class="trait">Autonome</span>
           <span class="trait">Rigueur documentaire</span>
           <span class="trait">Pratique manuelle</span>
-          <span class="trait">Permis B</span>
         </div>
 
         <div class="about-quote">
@@ -1464,28 +1427,28 @@
 
   <section id="skills">
     <p class="section-label reveal">Compétences</p>
-    <h2 class="section-title reveal">Compétences utiles en environnement industriel</h2>
+    <h2 class="section-title reveal">Compétences</h2>
     <div class="divider reveal"></div>
 
     <p class="section-subtitle reveal">
-      Chaque compétence est présentée avec son contexte concret d’utilisation, dans une logique de conception, d’intégration et de validation.
+      Quelques compétences techniques et méthodes mobilisées dans mes projets académiques et personnels.
     </p>
 
     <div class="tabs reveal">
       <button class="tab-btn active" onclick="switchTab('elec')">⚡ Électronique / Embarqué</button>
       <button class="tab-btn" onclick="switchTab('dev')">💻 Développement</button>
       <button class="tab-btn" onclick="switchTab('auto')">🏭 Automatisme</button>
-      <button class="tab-btn" onclick="switchTab('method')">📋 Méthode & posture</button>
+      <button class="tab-btn" onclick="switchTab('method')">📋 Méthode</button>
     </div>
 
     <div class="tab-panel active" id="tab-elec">
       <div class="skill-pill reveal">
         <div class="skill-name">C / FSM embarquée</div>
-        <div class="skill-ctx">SAÉ1 barrière PN, TPs S1, implémentation d’automates d’états, optimisation 8 → 5 états.</div>
+        <div class="skill-ctx">SAÉ1 barrière PN, TPs S1, implémentation d’automates d’états et logique séquentielle.</div>
       </div>
       <div class="skill-pill reveal">
         <div class="skill-name">KiCad PCB</div>
-        <div class="skill-ctx">Conception schéma + routage sur la SAÉ1, détecteur infrarouge sur PCB custom.</div>
+        <div class="skill-ctx">Conception schéma et routage sur la SAÉ1, détecteur infrarouge sur PCB custom.</div>
       </div>
       <div class="skill-pill reveal">
         <div class="skill-name">Brasage CMS</div>
@@ -1497,14 +1460,14 @@
       </div>
       <div class="skill-pill reveal">
         <div class="skill-name">Arduino / SAMD21</div>
-        <div class="skill-ctx">TPs embarqués S2, afficheur OLED, logique séquentielle sur microcontrôleur 32 bits.</div>
+        <div class="skill-ctx">TPs embarqués S2, afficheur OLED et logique séquentielle sur microcontrôleur 32 bits.</div>
       </div>
     </div>
 
     <div class="tab-panel" id="tab-dev">
       <div class="skill-pill reveal">
         <div class="skill-name">GLua</div>
-        <div class="skill-ctx">Serveur Garry’s Mod : systèmes de combat, hitbox dynamiques, interfaces VGUI procédurales, apprentissage 100 % autodidacte.</div>
+        <div class="skill-ctx">Serveur Garry’s Mod, systèmes de combat, hitbox dynamiques, interfaces VGUI procédurales, apprentissage 100 % autodidacte.</div>
       </div>
       <div class="skill-pill reveal">
         <div class="skill-name">C</div>
@@ -1515,12 +1478,8 @@
         <div class="skill-ctx">Optimisation base de données du projet MangaRP, migration .data vers MySQL pour les performances.</div>
       </div>
       <div class="skill-pill reveal">
-        <div class="skill-name">Git / GitHub</div>
-        <div class="skill-ctx">Versioning de projets personnels et académiques, branches, historique propre et commits structurés.</div>
-      </div>
-      <div class="skill-pill reveal">
         <div class="skill-name">VS Code</div>
-        <div class="skill-ctx">Environnement principal de développement, extensions C/C++, Lua et workflow quotidien.</div>
+        <div class="skill-ctx">Environnement principal de développement pour les projets en C et Lua.</div>
       </div>
     </div>
 
@@ -1539,14 +1498,14 @@
       </div>
       <div class="skill-pill reveal">
         <div class="skill-name">SEE Electrical</div>
-        <div class="skill-ctx">Schémas électriques industriels, cotation, plans de câblage.</div>
+        <div class="skill-ctx">Schémas électriques industriels, cotation et plans de câblage.</div>
       </div>
     </div>
 
     <div class="tab-panel" id="tab-method">
       <div class="skill-pill reveal">
         <div class="skill-name">Proactivité</div>
-        <div class="skill-ctx">Prise d’initiatives sur les projets, propositions d’amélioration sans attendre qu’on me le demande.</div>
+        <div class="skill-ctx">Prise d’initiatives sur les projets et propositions d’amélioration quand c’est pertinent.</div>
       </div>
       <div class="skill-pill reveal">
         <div class="skill-name">Autonomie</div>
@@ -1558,11 +1517,11 @@
       </div>
       <div class="skill-pill reveal">
         <div class="skill-name">Rigueur</div>
-        <div class="skill-ctx">Rapports soignés, vérification systématique avant rendu, fiches de tests structurées et exhaustives.</div>
+        <div class="skill-ctx">Rapports soignés, vérification systématique avant rendu et fiches de tests structurées.</div>
       </div>
       <div class="skill-pill reveal">
         <div class="skill-name">Travail en équipe</div>
-        <div class="skill-ctx">SAÉ2 coupe robotique, coordination en groupe, communication simple et efficace.</div>
+        <div class="skill-ctx">SAÉ2 coupe robotique, coordination en groupe et communication simple et efficace.</div>
       </div>
     </div>
   </section>
@@ -1574,7 +1533,7 @@
       <div class="divider reveal"></div>
 
       <p class="section-subtitle reveal">
-        Projets académiques et personnels : conception, automatisation, validation, robotique et développement logiciel.
+        Projets académiques et personnels, entre conception, automatisation, validation, robotique et développement logiciel.
       </p>
 
       <div class="projects-grid">
@@ -1593,7 +1552,7 @@
                 <li>Conception du schéma et du PCB sous KiCad</li>
                 <li>Définition et exécution des tests fonctionnels sur 7 fonctions à valider</li>
                 <li>Relevés oscilloscope annotés et analyse des comportements réels</li>
-                <li>Développement et optimisation d’une FSM en C pour piloter le système</li>
+                <li>Développement d’une FSM en C pour piloter le système</li>
                 <li>Rédaction d’une documentation technique structurée : fiches de tests, rapport d’automatisation, résultats</li>
               </ul>
             </div>
@@ -1886,9 +1845,6 @@
       © 2026 Marouane SAHAOUI · BUT GEII ESE · IUT de Nantes ·
       <a href="mailto:marouanesahaoui44@gmail.com">marouanesahaoui44@gmail.com</a>
     </p>
-    <p style="margin-top: 0.4rem;">
-      Fait à la main · Hébergé sur <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">GitHub Pages</a>
-    </p>
   </footer>
 
   <script>
@@ -2018,16 +1974,11 @@
             fallback.style.display = "flex";
           }
         } catch (e) {
-          /* PDF chargé ou restriction navigateur */
         }
       }, 1200);
     });
   </script>
 
-  <script
-    data-goatcounter="https://marouane.goatcounter.com/count"
-    async
-    src="https://gc.zgo.at/count.js"
-  ></script>
+  <script data-goatcounter="https://marouane.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
